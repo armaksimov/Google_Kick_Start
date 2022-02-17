@@ -25,14 +25,14 @@ int main() {
 		}
 		kingdomName[actLength] = '\0';
 
-		if (kingdomName[actLength - 1] == 'y') {
-			printf("Case #%d: %s is ruled by nobody.\n", i + 1, kingdomName);
-		}
-		else if (isVowel(kingdomName[actLength - 1])) {
+		if (isVowel(kingdomName[actLength - 1])) {
 			printf("Case #%d: %s is ruled by Alice.\n", i + 1, kingdomName);
 		}
-		else {
+		else if (!isVowel(kingdomName[actLength - 1]) && kingdomName[actLength - 1] != 'y' && kingdomName[actLength - 1] != 'Y') {
 			printf("Case #%d: %s is ruled by Bob.\n", i + 1, kingdomName);
+		}
+		else if (kingdomName[actLength - 1] == 'y' || kingdomName[actLength - 1] == 'Y') {
+			printf("Case #%d: %s is ruled by nobody.\n", i + 1, kingdomName);
 		}
 	}
 
