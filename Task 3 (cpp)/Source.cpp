@@ -12,9 +12,9 @@ vector<int> GetHIndexScore(vector<int> citations_per_paper) {
     for (int j = 0; j < size; j++) {
         int hBiggerCount = 0;
         for (int k = 0; k <= j; k++) {
-            if (citations_per_paper[k] > H) {
+            if (citations_per_paper.at(k) > H) {
                 hBiggerCount++;
-                if (hBiggerCount > H || hBiggerCount == citations_per_paper[k]) {
+                if (hBiggerCount > H || hBiggerCount == citations_per_paper.at(k)) {
                     H = hBiggerCount;
                     break;
                 }
